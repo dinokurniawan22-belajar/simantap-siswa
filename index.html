@@ -16,29 +16,30 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent; 
+            -webkit-tap-highlight-color: transparent;
         }
 
-        html, body {
-            width: 100%;
-            height: 100%;
-            background-color: #0b2545; /* Menghilangkan kebocoran warna putih latar belakang */
-            overflow: hidden; /* Mengunci agar layar utama tidak bisa di-scroll */
+        body {
+            background-color: #051622; 
             font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        /* Container utama dipaksa mengikuti tinggi presisi 100% layar HP */
+        /* Container utama simulasi layar HP */
         .phone-container {
             width: 100%;
-            height: 100%;
             max-width: 450px;
-            margin: 0 auto;
             background-color: #0b2545; 
-            padding: 16px 20px 10px 20px; /* Padding dikurangi agar hemat ruang vertical */
+            padding: 20px 20px 30px 20px; /* Padding atas dirapatkan menjadi 20px */
+            position: relative;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between; /* Membagi ruang secara seimbang antara Header, Grid, dan Footer */
         }
 
         /* Bagian Header Penampung Logo & Judul */
@@ -48,15 +49,15 @@
             flex-direction: column;
             align-items: center; 
             text-align: center;
-            margin-top: 0px;
-            margin-bottom: 10px;
+            margin-top: 0px; /* Menghilangkan margin atas agar lebih naik */
+            margin-bottom: 20px; /* Jarak ke grid menu dirapatkan dari 35px menjadi 20px */
         }
 
-        /* Pembungkus Lingkaran Logo Sekolah (Dikecilkan dari 130px ke 95px agar muat) */
+        /* Pembungkus Lingkaran Logo Sekolah (Dikecilkan dari 130px ke 95px) */
         .logo-box {
             width: 95px; 
             height: 95px;
-            margin-bottom: 8px;
+            margin-bottom: 12px; /* Jarak bawah dikecilkan */
             border: 3px solid #ffd166; 
             border-radius: 50%;
             background-color: #ffffff; 
@@ -74,7 +75,7 @@
             object-fit: contain; 
         }
 
-        /* Ukuran font disesuaikan agar tidak meluber */
+        /* Judul Dikecilkan dari 1.8rem ke 1.35rem */
         .header-section h1 {
             color: #ffd166; 
             font-size: 1.35rem;
@@ -85,6 +86,7 @@
             text-shadow: 2px 2px 0px #000; 
         }
 
+        /* Sub-judul disesuaikan */
         .header-section p {
             font-size: 0.75rem;
             font-weight: 700;
@@ -93,12 +95,13 @@
             margin: 0 auto;
         }
 
+        /* Badge disesuaikan */
         .header-section .badge {
             display: inline-block;
             font-size: 0.7rem;
             color: #000000;
             background-color: #00f2fe; 
-            margin-top: 6px;
+            margin-top: 8px;
             padding: 4px 12px;
             border: 2px solid #000000;
             border-radius: 4px;
@@ -106,16 +109,15 @@
             box-shadow: 2px 2px 0px #000000;
         }
 
-        /* Grid Menu Navigasi (Jarak gap dirapatkan menjadi 12px) */
+        /* Grid Menu Navigasi (Kerapatan gap disesuaikan dari 18px ke 12px) */
         .menu-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
             width: 100%;
-            flex-grow: 0; /* Mencegah grid meregang berlebihan */
         }
 
-        /* Desain Tombol Menu: Padding dikurangi agar pas 1 halaman */
+        /* Desain Tombol Menu (Padding dikecilkan dari 22px menjadi 14px) */
         .menu-card {
             background-color: #ffffff; 
             border: 3px solid #000000; 
@@ -124,12 +126,12 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 12px 8px;
+            padding: 14px 10px;
             text-decoration: none;
             color: #000000; 
             text-align: center;
             box-shadow: 4px 4px 0px #000000; 
-            transition: all 0.05s ease;
+            transition: all 0.1s ease;
         }
 
         .menu-card:active {
@@ -137,7 +139,7 @@
             box-shadow: 1px 1px 0px #000000;
         }
 
-        /* Wadah Ikon diperkecil dari 55px ke 42px */
+        /* Wadah Ikon (Dikecilkan dari 55px ke 42px) */
         .icon-box {
             width: 42px;
             height: 42px;
@@ -146,13 +148,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.15rem;
-            margin-bottom: 6px;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
             color: #ffffff; 
             box-shadow: 2px 2px 0px #000000;
         }
 
-        /* Warna Ikon tetap dipertahankan */
         .bg-web { background-color: #0052cc; }       
         .bg-literasi { background-color: #b30086; }  
         .bg-jadwal { background-color: #e65c00; }    
@@ -160,7 +161,7 @@
         .bg-unduh { background-color: #008080; }     
         .bg-assembler { background-color: #333333; } 
 
-        /* Ukuran teks tombol dioptimalkan */
+        /* Ukuran Teks Menu (Dikecilkan dari 0.95rem ke 0.8rem) */
         .card-text {
             font-size: 0.8rem;
             font-weight: 800; 
@@ -168,16 +169,16 @@
             color: #000000;
         }
 
-        /* Footer dirapatkan ke batas bawah layar */
+        /* Footer (Padding disesuaikan) */
         .footer-section {
+            margin-top: auto;
             width: 100%;
             text-align: center;
-            padding-top: 10px;
-            padding-bottom: 4px;
+            padding-top: 25px;
         }
 
         .footer-icon {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #ffd166;
             margin-bottom: 2px;
             text-shadow: 2px 2px 0px #000;
@@ -186,7 +187,7 @@
         .footer-text {
             font-family: 'Satisfy', cursive;
             color: #ffd166;
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             text-shadow: 1px 1px 2px #000;
         }
     </style>
@@ -199,6 +200,7 @@
             <div class="logo-box">
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEih9uQdcbtRBRGH7YzvDkh6vXsNINhEvkHtkEBi3iCgOqcMse7dr3fHJaL9JJIX3S5Xhp7bJgzIYvAPddKLTOgegym25jgnl96ZeoUtYqcVj1bJ0VE3d7JoCRw8J3NX6aA5VWN1YTY6s4-52THggYM_SdwJuhhq17MH9kdpqx4sEoaVy113A7Npwea4obML/s200/logo%20simantap-smp65.png" alt="Logo Sekolah">
             </div>
+            
             <h1>SIMANTAP<br>SMPN 65 BATAM</h1>
             <p>Sistem Manajemen Terpadu Aman dan Profesional</p>
             <div class="badge"><i class="fa-solid fa-user-graduate"></i> TAMPILAN SISWA</div>
