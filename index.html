@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMANTAP SMPN 65 BATAM</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Satisfy&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #051622; 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container utama simulasi layar HP */
+        .phone-container {
+            width: 100%;
+            max-width: 450px;
+            background-color: #0b2545; 
+            padding: 40px 24px;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Bagian Header Penampung Logo & Judul */
+        .header-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Memastikan semua elemen di dalam header center 100% */
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 35px;
+        }
+
+        /* Pembungkus Lingkaran Logo Sekolah */
+        .logo-box {
+            width: 130px; 
+            height: 130px;
+            margin-bottom: 20px;
+            border: 3px solid #ffd166; 
+            border-radius: 50%;
+            background-color: #ffffff; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Menjaga logo proporsional dan tidak lonjong */
+        }
+
+        .header-section h1 {
+            color: #ffd166; 
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 0px #000; 
+        }
+
+        .header-section p {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+        .header-section .badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #000000;
+            background-color: #00f2fe; 
+            margin-top: 14px;
+            padding: 6px 16px;
+            border: 2px solid #000000;
+            border-radius: 4px;
+            font-weight: 800;
+            box-shadow: 2px 2px 0px #000000;
+        }
+
+        /* Grid Menu Navigasi (2 Kolom) */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            width: 100%;
+        }
+
+        /* Desain Tombol Menu: High Contrast & Ultra Sharp */
+        .menu-card {
+            background-color: #ffffff; 
+            border: 3px solid #000000; 
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 22px 12px;
+            text-decoration: none;
+            color: #000000; 
+            text-align: center;
+            box-shadow: 5px 5px 0px #000000; 
+            transition: all 0.1s ease;
+        }
+
+        /* Efek Tekan/Klik yang responsif */
+        .menu-card:active {
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0px #000000;
+        }
+
+        /* Wadah Ikon dengan Warna Solid Terang */
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            border: 2.5px solid #000000;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #ffffff; 
+            box-shadow: 2px 2px 0px #000000;
+        }
+
+        /* Warna Solid Khusus untuk Setiap Ikon */
+        .bg-web { background-color: #0052cc; }       
+        .bg-literasi { background-color: #b30086; }  
+        .bg-jadwal { background-color: #e65c00; }    
+        .bg-cbt { background-color: #cc0000; }       
+        .bg-unduh { background-color: #008080; }     
+        .bg-assembler { background-color: #333333; } 
+
+        /* Desain Teks Menu - Bold & Tajam */
+        .card-text {
+            font-size: 0.95rem;
+            font-weight: 800; 
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        /* Footer */
+        .footer-section {
+            margin-top: auto;
+            width: 100%;
+            text-align: center;
+            padding-top: 45px;
+        }
+
+        .footer-icon {
+            font-size: 1.4rem;
+            color: #ffd166;
+            margin-bottom: 4px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .footer-text {
+            font-family: 'Satisfy', cursive;
+            color: #ffd166;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-container">
+
+        <div class="header-section">
+            
+            <div class="logo-box">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEih9uQdcbtRBRGH7YzvDkh6vXsNINhEvkHtkEBi3iCgOqcMse7dr3fHJaL9JJIX3S5Xhp7bJgzIYvAPddKLTOgegym25jgnl96ZeoUtYqcVj1bJ0VE3d7JoCRw8J3NX6aA5VWN1YTY6s4-52THggYM_SdwJuhhq17MH9kdpqx4sEoaVy113A7Npwea4obML/s200/logo%20simantap-smp65.png" alt="Logo Sekolah">
+            </div>
+            
+            <h1>SIMANTAP<br>SMPN 65 BATAM</h1>
+            <p>Sistem Manajemen Terpadu Aman dan Profesional</p>
+            <div class="badge"><i class="fa-solid fa-user-graduate"></i> TAMPILAN SISWA</div>
+        </div>
+
+        <div class="menu-grid">
+            
+            <a href="#" class="menu-card">
+                <div class="icon-box bg-web">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <div class="card-text">Web Sekolah</div>
+            </a>
+            
+            <a href="#" class="menu-card">
+                <div class="icon-box bg-literasi">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div class="card-text">Literasi Digital</div>
+            </a>
+
+            <a href="#" class="menu-card">
+                <div class="icon-box bg-jadwal">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+                <div class="card-text">Jadwal Pelajaran</div>
+            </a>
+            
+            <a href="#" class="menu-card">
+                <div class="icon-box bg-cbt">
+                    <i class="fa-solid fa-file-signature"></i>
+                </div>
+                <div class="card-text">CBT Exam Browser</div>
+            </a>
+
+            <a href="#" class="menu-card">
+                <div class="icon-box bg-unduh">
+                    <i class="fa-solid fa-cloud-arrow-down"></i>
+                </div>
+                <div class="card-text">Unduh Buku</div>
+            </a>
+            
+            <a href="#" class="menu-card">
+                <div class="icon-box bg-assembler">
+                    <i class="fa-solid fa-cubes"></i>
+                </div>
+                <div class="card-text">Assembler Edu</div>
+            </a>
+
+        </div>
+
+        <div class="footer-section">
+            <div class="footer-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="footer-text">Semangat Menuntut Ilmu</div>
+        </div>
+    </div>
+
+</body>
+</html>
